@@ -1,47 +1,55 @@
-package com.example.chewtimer
-
+import android.media.MediaPlayer
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.chewtimer.ui.theme.ChewTimerTheme
+import android.os.CountDownTimer
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.example.chewtimer.R
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var timerButton: Button
+    private var timer: CountDownTimer? = null
+    private var isRunning = false
+    private val initialTime: Long = 20000 // in milliseconds
+    private var timeLeft: Long = initialTime
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            ChewTimerTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+        setContentView(R.layout.activity_main)
+
+        timerButton = findViewById(R.id.timerButton)
+
+        val chime = MediaPlayer.create(this, R.raw.bing_bong)
+
+        timerButton.setOnClickListener {
+            if (isRunning) {
+                stopTimer()
+            } else {
+                startTimer(chime)
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    private fun startTimer(chime: MediaPlayer) {
+        timer = object : CountDownTimer(timeLeft, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                timeLeft = millisUntilFinished
+                val secondsLeft = (timeLeft / 1000).toString()
+                timerButton.text = secondsLeft
+            }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ChewTimerTheme {
-        Greeting("Android")
+            override fun onFinish() {
+                chime.start()
+                timeLeft = initialTime
+                startTimer(chime) // Restart the timer automatically
+            }
+        }.start()
+        isRunning = true
+    }
+
+    private fun stopTimer() {
+        timer?.cancel()
+        isRunning = false
+        timerButton.text = (timeLeft / 1000).toString()
     }
 }
