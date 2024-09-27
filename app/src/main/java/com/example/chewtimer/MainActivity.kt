@@ -1,9 +1,10 @@
+package com.example.chewtimer
+
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.chewtimer.R
 
 class MainActivity : AppCompatActivity() {
 

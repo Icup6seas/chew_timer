@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Chew Timer</string>
+    <string name="sub_title">Press Me To Start Eating!</string>
+    <string name="title">Chew Timer</string>
+    <string name="copyright">© 2024 ChrisCoz. All rights reserved.</string>
+
 </resources>
