@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pastel_teal"
+    android:background="@color/Indigo"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginEnd="16dp"
         android:text="@string/title"
         android:textAllCaps="true"
-        android:textColor="@color/black"
+        android:textColor="@color/Blue"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txt_btnTitle"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="465dp"
         android:text="@string/sub_title"
-        android:textColor="@color/black"
+        android:textColor="@color/Blue"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,13 +40,12 @@
 
     <Button
         android:id="@+id/timerButton"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="@drawable/circle_shape"
-        android:backgroundTint="@color/purple_light"
+        android:layout_width="250dp"
+        android:layout_height="210dp"
+        android:background="@drawable/btn_teal_green_grade_circle"
         android:text="@string/timerNum"
-        android:textColor="@color/pastel_white"
-        android:textSize="96sp"
+        android:textColor="@color/neon_pink"
+        android:textSize="92sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

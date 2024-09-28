@@ -7,11 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="Blue">#408EC6</color>
+    <color name="Blue">#3C96DF</color>
     <color name="Maroon">#7A2048</color>
     <color name="Indigo">#1E2761</color>
     <color name="pastel_white">#FCF6F5FF</color>
     <color name="purple_light">#EDED60DB</color>
     <color name="pastel_teal">#8A08E9FA</color>
     <color name="orange">#FC0</color>
+    <color name="neon_pink">#E91E63</color>
 </resources>
