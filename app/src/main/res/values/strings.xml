@@ -3,5 +3,6 @@
     <string name="sub_title">Press Me To Start Eating!</string>
     <string name="title">Chew Timer</string>
     <string name="copyright">© 2024 ChrisCoz. All rights reserved.</string>
+    <string name="timerNum">"20"</string>
 
 </resources>
